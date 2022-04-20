@@ -1,7 +1,16 @@
-from neo4j import GraphDatabase
+import pyTigerGraph as tg
+import config
 
-uri = "bolt://localhost:7687"
-db_driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
+token = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName)
+print (token)
+
+token.getToken(config.secret)[0]
+
+
+conn = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName, password=config.password, apiToken=token)
+
+
+# print ("Auth Token: {authToken}")
 
 def get_data(tx, query, Object):
 	outputList = []
@@ -20,3 +29,5 @@ def create(tx,query):
 	# 	print (record)
 
 	#movies = session.read_transaction()
+
+# print ("Done")
