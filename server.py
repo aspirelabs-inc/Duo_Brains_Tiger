@@ -1,6 +1,6 @@
-# This is for testing
+# Clear on each run
 from aspire.database.query_manager import query_manager
-query_manager.runQuery('MATCH (n) DETACH DELETE n')
+query_manager.runQuery('drop all')
 
 
 import grpc
@@ -46,13 +46,13 @@ def serve():
 	server.start()
 	server.wait_for_termination()
 
-serve()
+#serve()
 
 # cells = CopyTables("0","1")
 
 # print (cells)
 
-# print(outgoing_translator.formatOutgoing(Testing()))
+print(outgoing_translator.formatOutgoing(incoming_translator.Testing()))
 
 
 # Get Parents of Cell

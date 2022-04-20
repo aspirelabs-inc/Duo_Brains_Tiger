@@ -2,26 +2,20 @@ import pyTigerGraph as tg
 import config
 
 token = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName)
-print (token)
+authToken = token.getToken(config.secret)[0]
 
-token.getToken(config.secret)[0]
-
-
-conn = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName, password=config.password, apiToken=token)
-
-
-# print ("Auth Token: {authToken}")
+conn = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName, password=config.password, apiToken=authToken)
 
 def get_data(tx, query, Object):
 	outputList = []
-	result = tx.run(query)
+	conn.gsql(query, options=None)
 	for output in result:
 		print(output)
 		outputList.append(output[Object])
 	return outputList
 
 def create(tx,query):
-	result = tx.run(query)
+	conn.gsql(query, options=None)
 	print (result)
 
 	# objects = []
@@ -29,5 +23,3 @@ def create(tx,query):
 	# 	print (record)
 
 	#movies = session.read_transaction()
-
-# print ("Done")

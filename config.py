@@ -1,3 +1,5 @@
-message = "One small print statement, one step for humankind."
-
-databaseUri = "neo4j://localhost:7687"
+hostName = "https://duotiger.i.tgcloud.io/"
+graphName = "Duo"
+secret = "t6g4u18o5te3pkm5v2d49734p3521qfg"
+userName = "tigergraph"
+password = "tigergraph"

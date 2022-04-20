@@ -1,20 +1,22 @@
-from neo4j import GraphDatabase
+import pyTigerGraph as tg
+import config
 
 class query_manager:
-	uri = "bolt://localhost:7687"
-	db_driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
+	token = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName)
+	authToken = token.getToken(config.secret)[0]
+	conn = tg.TigerGraphConnection(host=config.hostName, graphname=config.graphName, password=config.password, apiToken=authToken)
 
 	def input(Object, Type):
 		# Determine what type of query needs to be executed
 		print (Object.toCreateQuery())
 		if Type == "Create":
-			query_manager.db_driver.session().write_transaction(query_manager.create, Object.toCreateQuery())
+			query_manager.conn.gsql(Object.toCreateQuery())
 		elif Type == "Search":
-			query_manager.db_driver.session().write_transaction(query_manager.get_data, Object.toCreateQuery())
+			query_manager.conn.gsql(Object.toCreateQuery())
 
 
 	def runQuery(query):
-		return query_manager.db_driver.session().write_transaction(query_manager.executeQuery, query)
+		return query_manager.conn.gsql(query)
 
 	def executeQuery(tx, query):
 		result = tx.run(query)
@@ -31,11 +33,5 @@ class query_manager:
 	def create(tx,query):
 		result = tx.run(query)
 
-		# objects = []
-		# for record in result:
-		# 	print (record)
+query_manager.conn.gsql('ls', options=[])
 
-		#movies = session.read_transaction()
-
-# 	print (value)
-# 	cells.append(value["c"])

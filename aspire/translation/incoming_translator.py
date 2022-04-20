@@ -1,10 +1,5 @@
 #import aspire.translation.translator
 
-
-# Remove
-#import aspire.translation.outgoing_translator as outgoing_translator
-
-
 import grpc
 from google.protobuf.json_format import MessageToJson
 
@@ -241,35 +236,35 @@ class GraphServicer(object):
 def Testing():
 	# Testing
 
-	GraphServicer.Add("", graph_pb2.AddRequest(list=list_pb2.List(parent_uid = "0", uid = "0", name = "List #1", elements = [ 
-		list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( button = button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market button") ) ]),
-		list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( text = text_pb2.Text(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market text") ) ])
-	] )), None)
+	# GraphServicer.Add("", graph_pb2.AddRequest(list=list_pb2.List(parent_uid = "0", uid = "0", name = "List #1", elements = [ 
+	# 	list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( button = button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market button") ) ]),
+	# 	list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( text = text_pb2.Text(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market text") ) ])
+	# ] )), None)
 
 	# list_pb2.ListElementObjects(button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 20, left = 0, right = 40), value="Market button"))
 
 	#GraphServicer.Add("", graph_pb2.AddRequest(button=button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market button")),None)
 
-	# GraphServicer.Add("", graph_pb2.AddRequest(table=table_pb2.Table(uid="0", name="0", cells=[cell_pb2.Cell(uid="292111136",coordinates=coordinates_pb2.Coordinates(),value="Company"),cell_pb2.Cell(uid="2143500677",coordinates=coordinates_pb2.Coordinates(col=1),value="Contact"),cell_pb2.Cell(uid="1075296975",coordinates=coordinates_pb2.Coordinates(col=2),value="Country"),cell_pb2.Cell(uid="643294799",coordinates=coordinates_pb2.Coordinates(row=1),value="AlfredsFutterkiste"),cell_pb2.Cell(uid="330708918",coordinates=coordinates_pb2.Coordinates(row=1,col=1),value="MariaAnders"),cell_pb2.Cell(uid="1865576430",coordinates=coordinates_pb2.Coordinates(row=1,col=2),value="Germany"),cell_pb2.Cell(uid="786473412",coordinates=coordinates_pb2.Coordinates(row=2),value="CentrocomercialMoctezuma"),cell_pb2.Cell(uid="150472825",coordinates=coordinates_pb2.Coordinates(row=2,col=1),value="FranciscoChang"),cell_pb2.Cell(uid="118929904",coordinates=coordinates_pb2.Coordinates(row=2,col=2),value="Mexico"),cell_pb2.Cell(uid="231344122",coordinates=coordinates_pb2.Coordinates(row=3),value="ErnstHandel"),cell_pb2.Cell(uid="1146756079",coordinates=coordinates_pb2.Coordinates(row=3,col=1),value="RolandMendel"),cell_pb2.Cell(uid="1177622414",coordinates=coordinates_pb2.Coordinates(row=3,col=2),value="Austria"),cell_pb2.Cell(uid="808421865",coordinates=coordinates_pb2.Coordinates(row=4),value="IslandTrading"),cell_pb2.Cell(uid="421247298",coordinates=coordinates_pb2.Coordinates(row=4,col=1),value="HelenBennett"),cell_pb2.Cell(uid="550556263",coordinates=coordinates_pb2.Coordinates(row=4,col=2),value="UK"),cell_pb2.Cell(uid="1009215780",coordinates=coordinates_pb2.Coordinates(row=5),value="LaughingBacchusWinecellars"),cell_pb2.Cell(uid="302051192",coordinates=coordinates_pb2.Coordinates(row=5,col=1),value="YoshiTannamuri"),cell_pb2.Cell(uid="110208742",coordinates=coordinates_pb2.Coordinates(row=5,col=2),value="Canada")] )), None)
+	GraphServicer.Add("", graph_pb2.AddRequest(table=table_pb2.Table(uid="0", name="0", cells=[cell_pb2.Cell(uid="292111136",coordinates=coordinates_pb2.Coordinates(),value="Company"),cell_pb2.Cell(uid="2143500677",coordinates=coordinates_pb2.Coordinates(col=1),value="Contact"),cell_pb2.Cell(uid="1075296975",coordinates=coordinates_pb2.Coordinates(col=2),value="Country"),cell_pb2.Cell(uid="643294799",coordinates=coordinates_pb2.Coordinates(row=1),value="AlfredsFutterkiste"),cell_pb2.Cell(uid="330708918",coordinates=coordinates_pb2.Coordinates(row=1,col=1),value="MariaAnders"),cell_pb2.Cell(uid="1865576430",coordinates=coordinates_pb2.Coordinates(row=1,col=2),value="Germany"),cell_pb2.Cell(uid="786473412",coordinates=coordinates_pb2.Coordinates(row=2),value="CentrocomercialMoctezuma"),cell_pb2.Cell(uid="150472825",coordinates=coordinates_pb2.Coordinates(row=2,col=1),value="FranciscoChang"),cell_pb2.Cell(uid="118929904",coordinates=coordinates_pb2.Coordinates(row=2,col=2),value="Mexico"),cell_pb2.Cell(uid="231344122",coordinates=coordinates_pb2.Coordinates(row=3),value="ErnstHandel"),cell_pb2.Cell(uid="1146756079",coordinates=coordinates_pb2.Coordinates(row=3,col=1),value="RolandMendel"),cell_pb2.Cell(uid="1177622414",coordinates=coordinates_pb2.Coordinates(row=3,col=2),value="Austria"),cell_pb2.Cell(uid="808421865",coordinates=coordinates_pb2.Coordinates(row=4),value="IslandTrading"),cell_pb2.Cell(uid="421247298",coordinates=coordinates_pb2.Coordinates(row=4,col=1),value="HelenBennett"),cell_pb2.Cell(uid="550556263",coordinates=coordinates_pb2.Coordinates(row=4,col=2),value="UK"),cell_pb2.Cell(uid="1009215780",coordinates=coordinates_pb2.Coordinates(row=5),value="LaughingBacchusWinecellars"),cell_pb2.Cell(uid="302051192",coordinates=coordinates_pb2.Coordinates(row=5,col=1),value="YoshiTannamuri"),cell_pb2.Cell(uid="110208742",coordinates=coordinates_pb2.Coordinates(row=5,col=2),value="Canada")] )), None)
 
-	# #print("Added first table")
+	#print("Added first table")
 
-	# GraphServicer.Add("", graph_pb2.AddRequest(table=table_pb2.Table(uid="1", name="1", cells=[cell_pb2.Cell(uid="292111116",coordinates=coordinates_pb2.Coordinates(),value="Company"),cell_pb2.Cell(uid="2142500677",coordinates=coordinates_pb2.Coordinates(col=1),value="Country"),cell_pb2.Cell(uid="1075296973",coordinates=coordinates_pb2.Coordinates(col=2),value="Contact"),cell_pb2.Cell(uid="643194799",coordinates=coordinates_pb2.Coordinates(row=1),value="AlfredsFutterkiste"),cell_pb2.Cell(uid="330718918",coordinates=coordinates_pb2.Coordinates(row=1,col=1),value=""),cell_pb2.Cell(uid="1865576433",coordinates=coordinates_pb2.Coordinates(row=1,col=2),value=""),cell_pb2.Cell(uid="786473411",coordinates=coordinates_pb2.Coordinates(row=2),value="CentrocomercialMoctezuma"),cell_pb2.Cell(uid="150472824",coordinates=coordinates_pb2.Coordinates(row=2,col=1),value=""),cell_pb2.Cell(uid="118922904",coordinates=coordinates_pb2.Coordinates(row=2,col=2),value=""),cell_pb2.Cell(uid="231345122",coordinates=coordinates_pb2.Coordinates(row=3),value="ErnstHandel"),cell_pb2.Cell(uid="1146756073",coordinates=coordinates_pb2.Coordinates(row=3,col=1),value=""),cell_pb2.Cell(uid="1172622414",coordinates=coordinates_pb2.Coordinates(row=3,col=2),value=""),cell_pb2.Cell(uid="808421965",coordinates=coordinates_pb2.Coordinates(row=4),value="IslandTrading"),cell_pb2.Cell(uid="421247218",coordinates=coordinates_pb2.Coordinates(row=4,col=1),value=""),cell_pb2.Cell(uid="550558263",coordinates=coordinates_pb2.Coordinates(row=4,col=2),value=""),cell_pb2.Cell(uid="1009213780",coordinates=coordinates_pb2.Coordinates(row=5),value="LaughingBacchusWinecellars"),cell_pb2.Cell(uid="302051122",coordinates=coordinates_pb2.Coordinates(row=5,col=1),value=""),cell_pb2.Cell(uid="111208742",coordinates=coordinates_pb2.Coordinates(row=5,col=2),value="")] )), None)
+	GraphServicer.Add("", graph_pb2.AddRequest(table=table_pb2.Table(uid="1", name="1", cells=[cell_pb2.Cell(uid="292111116",coordinates=coordinates_pb2.Coordinates(),value="Company"),cell_pb2.Cell(uid="2142500677",coordinates=coordinates_pb2.Coordinates(col=1),value="Country"),cell_pb2.Cell(uid="1075296973",coordinates=coordinates_pb2.Coordinates(col=2),value="Contact"),cell_pb2.Cell(uid="643194799",coordinates=coordinates_pb2.Coordinates(row=1),value="AlfredsFutterkiste"),cell_pb2.Cell(uid="330718918",coordinates=coordinates_pb2.Coordinates(row=1,col=1),value=""),cell_pb2.Cell(uid="1865576433",coordinates=coordinates_pb2.Coordinates(row=1,col=2),value=""),cell_pb2.Cell(uid="786473411",coordinates=coordinates_pb2.Coordinates(row=2),value="CentrocomercialMoctezuma"),cell_pb2.Cell(uid="150472824",coordinates=coordinates_pb2.Coordinates(row=2,col=1),value=""),cell_pb2.Cell(uid="118922904",coordinates=coordinates_pb2.Coordinates(row=2,col=2),value=""),cell_pb2.Cell(uid="231345122",coordinates=coordinates_pb2.Coordinates(row=3),value="ErnstHandel"),cell_pb2.Cell(uid="1146756073",coordinates=coordinates_pb2.Coordinates(row=3,col=1),value=""),cell_pb2.Cell(uid="1172622414",coordinates=coordinates_pb2.Coordinates(row=3,col=2),value=""),cell_pb2.Cell(uid="808421965",coordinates=coordinates_pb2.Coordinates(row=4),value="IslandTrading"),cell_pb2.Cell(uid="421247218",coordinates=coordinates_pb2.Coordinates(row=4,col=1),value=""),cell_pb2.Cell(uid="550558263",coordinates=coordinates_pb2.Coordinates(row=4,col=2),value=""),cell_pb2.Cell(uid="1009213780",coordinates=coordinates_pb2.Coordinates(row=5),value="LaughingBacchusWinecellars"),cell_pb2.Cell(uid="302051122",coordinates=coordinates_pb2.Coordinates(row=5,col=1),value=""),cell_pb2.Cell(uid="111208742",coordinates=coordinates_pb2.Coordinates(row=5,col=2),value="")] )), None)
 
-	# query = 'MATCH (c:Cell {viewReference: 0}) RETURN c'
-	# values = query_manager.db_driver.session().write_transaction(query_manager.get_data, query, "c")
+	query = 'MATCH (c:Cell {viewReference: 0}) RETURN c'
+	values = query_manager.db_driver.session().write_transaction(query_manager.get_data, query, "c")
 
-	# updateCells = []
-	# for value in values:
-	# 	print (value._properties["value"])
-	# 	parents = query_manager.db_driver.session().write_transaction(query_manager.get_data,'MATCH (c:Cell{uid: '+str(value._properties["uid"])+'})-[p:HAS_PARENT]-(n) RETURN n',"n")
-	# 	parentList = []
-	# 	print (parents)
-	# 	for parent in parents:
-	# 		parentList.append(parent)
-	# 	if len(parentList) == 2:
-	# 		updateQuery = query_manager.db_driver.session().write_transaction(query_manager.executeQuery,'MATCH (r:Cell{value: "'+parentList[0]._properties["value"]+'"})-[:HAS_CHILD]->(t:Cell)-[:HAS_PARENT]->(c:Cell{value: "'+parentList[1]._properties["value"]+'"}) SET t.value = "'+value._properties["value"]+'"')
-	# cells = query_manager.db_driver.session().read_transaction(query_manager.get_data, "MATCH (c:Cell {viewReference: 1}) RETURN c", "c")
-	# return cells
+	updateCells = []
+	for value in values:
+		print (value._properties["value"])
+		parents = query_manager.db_driver.session().write_transaction(query_manager.get_data,'MATCH (c:Cell{uid: '+str(value._properties["uid"])+'})-[p:HAS_PARENT]-(n) RETURN n',"n")
+		parentList = []
+		print (parents)
+		for parent in parents:
+			parentList.append(parent)
+		if len(parentList) == 2:
+			updateQuery = query_manager.db_driver.session().write_transaction(query_manager.executeQuery,'MATCH (r:Cell{value: "'+parentList[0]._properties["value"]+'"})-[:HAS_CHILD]->(t:Cell)-[:HAS_PARENT]->(c:Cell{value: "'+parentList[1]._properties["value"]+'"}) SET t.value = "'+value._properties["value"]+'"')
+	cells = query_manager.db_driver.session().read_transaction(query_manager.get_data, "MATCH (c:Cell {viewReference: 1}) RETURN c", "c")
+	return cells
 
 Testing()

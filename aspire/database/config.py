@@ -1,5 +1,0 @@
-hostName = "http://localhost"
-graphName = "Duo"
-secret = "oqhdhbabi3mm0d74sjg0r8l28ov3nrps"
-userName = "tigergraph"
-password = "tigergraph"

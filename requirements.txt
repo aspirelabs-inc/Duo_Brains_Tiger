@@ -1,4 +1,3 @@
 pyTigerGraph
-numpy
 grpcio
 grpcio-tools
