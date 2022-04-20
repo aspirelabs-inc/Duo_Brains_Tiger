@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package aspire.brain.input.key;
+
+message Key {
+  string key = 1;
+}

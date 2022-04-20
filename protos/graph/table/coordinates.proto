@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package aspire.graph.table;
+
+message Coordinates {
+  uint32 row = 1;
+  uint32 col = 2;
+}

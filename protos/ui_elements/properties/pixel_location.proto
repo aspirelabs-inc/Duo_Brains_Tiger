@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package aspire.ui_elements.properties;
+
+message PixelLocation {
+  uint32 top = 1;
+  uint32 bottom = 2;
+  uint32 left = 3;
+  uint32 right = 4;
+}

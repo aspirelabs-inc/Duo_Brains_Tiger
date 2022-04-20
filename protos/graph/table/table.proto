@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package aspire.graph.table;
+
+import "graph/table/cell.proto";
+
+message Table {
+  string parent_uid = 1;
+  string uid = 2;
+  string name = 3;
+  repeated Cell cells = 4;
+}

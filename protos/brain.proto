@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package aspire.brain;
+
+import "graph/table/cell.proto";
+
+service Brain {
+  rpc UserCopyPaste(UserCopyPasteRequest) returns (UserCopyPasteResponse);
+
+  rpc CopyTable(CopyTableRequest) returns (CopyTableResponse);
+
+  rpc UserAction(UserActionRequest) returns (UserActionResponse);
+}
+
+message UserCopyPasteRequest {
+  string from_table_uid = 1;
+  string to_table_uid = 2;
+}
+
+message UserCopyPasteResponse { repeated aspire.graph.table.Cell cells = 1; }
+
+message CopyTableRequest {
+  string from_table_uid = 1;
+  string to_table_uid = 2;
+}
+
+message CopyTableResponse { repeated aspire.graph.table.Cell cells = 1; }
+
+message UserActionRequest {
+  repeated string keys = 1;
+}
+
+message UserActionResponse {}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package aspire.graph.table;
+
+import "graph/table/coordinates.proto";
+
+message Cell {
+  string uid = 1;
+  Coordinates coordinates = 2;
+  string value = 3;
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package aspire.graph;
+
+import "graph/table/table.proto";
+import "ui_elements/list.proto";
+import "ui_elements/button.proto";
+import "ui_elements/link.proto";
+import "ui_elements/text.proto";
+
+service Graph {
+  rpc Add(AddRequest) returns (AddResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+}
+
+message AddRequest {
+  oneof Object {
+    aspire.ui_elements.List list = 1;
+    aspire.ui_elements.Text text = 2;
+    aspire.ui_elements.Link link = 3;
+    aspire.ui_elements.Button button = 4;
+    table.Table table = 5;
+  }
+}
+
+message AddResponse {}
+
+message UpdateRequest {
+  oneof Object {
+    aspire.ui_elements.List list = 1;
+    aspire.ui_elements.Text text = 2;
+    aspire.ui_elements.Link link = 3;
+    aspire.ui_elements.Button button = 4;
+    table.Table table = 5;
+  }
+}
+
+message UpdateResponse {}

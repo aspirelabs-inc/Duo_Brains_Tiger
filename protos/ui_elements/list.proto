@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package aspire.ui_elements;
+
+import "ui_elements/properties/pixel_location.proto";
+
+import "ui_elements/text.proto";
+import "ui_elements/link.proto";
+import "ui_elements/button.proto";
+
+message List {
+  string parent_uid = 1;
+  string uid = 2;
+  string name = 3;
+  repeated ListElement elements = 4;
+}
+
+message ListElement {
+  repeated ListElementObjects list_data = 1;
+}
+
+message ListElementObjects {
+  oneof Object {
+    Text text = 1;
+    Link link = 2;
+    Button button = 3;
+  }
+}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package aspire.legacy;
+
+service Brain {
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Uppercase(UppercaseRequest) returns (UppercaseResponse);
+  rpc Copy(CopyRequest) returns (CopyResponse);
+  rpc CopyEvent(CopyEventRequest) returns (CopyEventResponse);
+}
+
+message WindowsUiaCell {
+  string table_uid = 1;
+  string coords = 2;
+  string value = 3;
+}
+
+message UpdateRequest {
+  string table_uid = 1;
+  string data = 2;
+}
+
+message UpdateResponse {
+  string table_uid = 1;
+  repeated WindowsUiaCell cells = 2;
+}
+
+message UppercaseRequest { string table_uid = 1; }
+
+message UppercaseResponse {
+  string table_uid = 1;
+  repeated WindowsUiaCell cells = 2;
+}
+
+message CopyRequest {
+  string table0_uid = 1;
+  string table1_uid = 2;
+}
+
+message CopyResponse {
+  string table0_uid = 1;
+  string table1_uid = 2;
+  repeated WindowsUiaCell cells = 3;
+}
+
+message CopyEventRequest {
+  string table0_uid = 1;
+  string table1_uid = 2;
+}
+
+message CopyEventResponse {
+  string table0_uid = 1;
+  string table1_uid = 2;
+  repeated WindowsUiaCell cells = 3;
+}

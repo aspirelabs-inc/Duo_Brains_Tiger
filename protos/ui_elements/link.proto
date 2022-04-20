@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package aspire.ui_elements;
+
+import "ui_elements/properties/pixel_location.proto";
+
+message Link {
+  string parent_uid = 1;
+  string uid = 2;
+  properties.PixelLocation location = 3;
+  string value = 4;
+}
