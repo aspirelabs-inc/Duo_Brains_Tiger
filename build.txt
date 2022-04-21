@@ -1,1 +1,0 @@
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. brain.proto graph/graph.proto graph/table/table.proto graph/table/cell.proto graph/table/coordinates.proto

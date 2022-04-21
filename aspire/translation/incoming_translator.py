@@ -268,3 +268,5 @@ def Testing():
 	return cells
 
 Testing()
+
+#CREATE VERTEX Cell (id_and_attribute_list) [ vertex_options ]

@@ -2,7 +2,6 @@
 from aspire.database.query_manager import query_manager
 query_manager.runQuery('drop all')
 
-
 import grpc
 from concurrent import futures
 import time
@@ -15,20 +14,6 @@ from aspire.translation.outgoing_translator import outgoing_translator
 
 import config
 
-import socket
-def get_ip():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.settimeout(0)
-    try:
-        # doesn't even have to be reachable
-        s.connect(('10.255.255.255', 1))
-        IP = s.getsockname()[0]
-    except Exception:
-        IP = '127.0.0.1'
-    finally:
-        s.close()
-    return IP
-
 # embeddings = False
 
 def serve():
@@ -40,9 +25,9 @@ def serve():
 	# brain_pb2_grpc.add_BrainServicer_to_server(BrainsServicer(), server)
 	# graph_pb2_grpc.add_GraphServicer_to_server(GraphServicer(), server)
 
-	print("Starting server: "+get_ip()+":8080")
+	print("Starting server: localhost:8080")
 	#server.add_insecure_port('[::]:8080')
-	server.add_insecure_port(get_ip()+':8080')
+	server.add_insecure_port('localhost:8080')
 	server.start()
 	server.wait_for_termination()
 
