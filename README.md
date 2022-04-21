@@ -1,18 +1,52 @@
+
+
 <img src="https://user-images.githubusercontent.com/25334227/162142531-44377fdd-3b0c-40f3-b925-d907b57d5852.png" height="64" width="auto">
 
-# Duo - Brains
+# Duo
+
+## Table of Contents:
+1. [Contributors](#Contributors)
+2. [Problem Statement](#Problem)
+3. [Description](#Description)
+4. [Dependencies](#Dependencies)
+5. [Installation](#Installation)
+6. [Issues and Improvements](#Issues)
+7. [Reflections](#Reflections)
+8. [References](#References)
+
+<a name="Contributors"/>
+
+### Contributors
+1. Ryan Kelly
+
+    a. 5197019904
+
+    b. lryannathaniel@gmail.com
+2. Anish Jain
+
+    a. 5164685054
+
+    b. anishjain@live.com
+
+3. Silen Naihin
+
+    a. 3853106667
+
+    b. silen.naihin@gmail.com
+
+
+<a name="Problem"/>
+
+### Problem Statement
+##### Graph for better world. 
 
 Duo needs to be able to learn from changes to the UI and predict user actions to learn a task.
 
 The Brains is responsible for this. It observes data from the UI Layer and determines how to represent them as queries on the Knowledge Graph before predicting following user actions.
 
-![Duo Poc V2 Demo](DuoPocV2.gif)
 
-## Table of Contents:
-1. [Overview](#Overview)
-2. [Installation](#Installation)
-3. [Usage](#Usage)
-4. [Contributing](#Contributing)
+
+
 
 <a name="Overview"/>
 
@@ -27,19 +61,6 @@ The Brains is divided into 3 layers:
 <a name="Installation"/>
 
 ## Installation:
-
-```
-# Clone the repo to your working directory
-git clone https://github.com/aspirelabs-inc/DuoPoc-Brains.git
-
-# Install required pip packages
-pip install -r requirements.txt
-
-```
-
-Download [Neo4j Desktop](https://neo4j.com/download-center/)
-
-<a name="Usage"/>
 
 ## Usage:
 
