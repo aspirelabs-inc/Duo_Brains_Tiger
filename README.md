@@ -80,7 +80,7 @@ Entry-level knowledge workers who aren’t designers or engineers, including ana
 But initially, we can’t market to all of them. So, we are going to start with the market with the highest need for a data entry solution - data entry freelancers. They do data entry tasks for a living, and if it works for them - it will likely work for others. 
 
 ##### Data 
-Using Windows Accessability Service we are able to generate data based off of the ui.
+Using Windows Accessability api we are able to pull structured data from the UI of any windows application.
 
 ##### Technology Stack
 Python with pyTigerGraph in order to generate the graph.
@@ -101,7 +101,7 @@ Python with pyTigerGraph in order to generate the graph.
 4. Clone this repository
 5. Open config.py and enter your details to the TigerGraph instance (host, username and password)
 6. Run python schema.py to generate the queries
-7. Run server.py to see the output based on a simulated ui layer. We were working with Windows Accessibility service in order to get an actual UI output done but were unable to get the two different repos connected and ready by the submission time.
+7. Run server.py to see the output based on a simulated ui layer. We were working with Windows Accessibility api but now simulate the ui layer of the brains to minimize comlpexity and maximize understanding.
 
 <a name="Issues"/>
 
