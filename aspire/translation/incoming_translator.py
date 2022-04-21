@@ -109,15 +109,6 @@ class incoming_translator:
 		interactable = Entity(random.randint(111111111, 999999999),"0",None,type,object.value)
 		query_manager.input(interactable, "Create")
 
-	def generateList(object):
-		print (object)
-		for elements in object.elements:
-			for interactable in elements.list_data:
-				print (interactable)
-				print (interactable.DESCRIPTOR.fields_by_name.keys())
-				#generateInteractable(interactable)
-
-
 def CopyTables(to_table_id, from_table_id):
 	query = 'MATCH (c:Cell {viewReference: 0}) RETURN c'
 	values = query_manager.db_driver.session().write_transaction(query_manager.get_data, query, "c")
@@ -184,10 +175,6 @@ class GraphServicer(object):
         	print ("Create link")
         	incoming_translator.generateInteractable(request.button, "Link")
 
-        elif request.HasField("list"):
-        	incoming_translator.generateList(request.list)
-        	print ("List currently WIP")
-
         elif request.HasField("table"):
         	print("Adding Table")
 
@@ -235,16 +222,6 @@ class GraphServicer(object):
 
 def Testing():
 	# Testing
-
-	# GraphServicer.Add("", graph_pb2.AddRequest(list=list_pb2.List(parent_uid = "0", uid = "0", name = "List #1", elements = [ 
-	# 	list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( button = button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market button") ) ]),
-	# 	list_pb2.ListElement (list_data=[ list_pb2.ListElementObjects( text = text_pb2.Text(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market text") ) ])
-	# ] )), None)
-
-	# list_pb2.ListElementObjects(button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 20, left = 0, right = 40), value="Market button"))
-
-	#GraphServicer.Add("", graph_pb2.AddRequest(button=button_pb2.Button(parent_uid = "0", uid = "0", location = pixel_location_pb2.PixelLocation(top = 0, bottom = 0, left = 0, right = 0), value="Market button")),None)
-
 	GraphServicer.Add("", graph_pb2.AddRequest(table=table_pb2.Table(uid="0", name="0", cells=[cell_pb2.Cell(uid="292111136",coordinates=coordinates_pb2.Coordinates(),value="Company"),cell_pb2.Cell(uid="2143500677",coordinates=coordinates_pb2.Coordinates(col=1),value="Contact"),cell_pb2.Cell(uid="1075296975",coordinates=coordinates_pb2.Coordinates(col=2),value="Country"),cell_pb2.Cell(uid="643294799",coordinates=coordinates_pb2.Coordinates(row=1),value="AlfredsFutterkiste"),cell_pb2.Cell(uid="330708918",coordinates=coordinates_pb2.Coordinates(row=1,col=1),value="MariaAnders"),cell_pb2.Cell(uid="1865576430",coordinates=coordinates_pb2.Coordinates(row=1,col=2),value="Germany"),cell_pb2.Cell(uid="786473412",coordinates=coordinates_pb2.Coordinates(row=2),value="CentrocomercialMoctezuma"),cell_pb2.Cell(uid="150472825",coordinates=coordinates_pb2.Coordinates(row=2,col=1),value="FranciscoChang"),cell_pb2.Cell(uid="118929904",coordinates=coordinates_pb2.Coordinates(row=2,col=2),value="Mexico"),cell_pb2.Cell(uid="231344122",coordinates=coordinates_pb2.Coordinates(row=3),value="ErnstHandel"),cell_pb2.Cell(uid="1146756079",coordinates=coordinates_pb2.Coordinates(row=3,col=1),value="RolandMendel"),cell_pb2.Cell(uid="1177622414",coordinates=coordinates_pb2.Coordinates(row=3,col=2),value="Austria"),cell_pb2.Cell(uid="808421865",coordinates=coordinates_pb2.Coordinates(row=4),value="IslandTrading"),cell_pb2.Cell(uid="421247298",coordinates=coordinates_pb2.Coordinates(row=4,col=1),value="HelenBennett"),cell_pb2.Cell(uid="550556263",coordinates=coordinates_pb2.Coordinates(row=4,col=2),value="UK"),cell_pb2.Cell(uid="1009215780",coordinates=coordinates_pb2.Coordinates(row=5),value="LaughingBacchusWinecellars"),cell_pb2.Cell(uid="302051192",coordinates=coordinates_pb2.Coordinates(row=5,col=1),value="YoshiTannamuri"),cell_pb2.Cell(uid="110208742",coordinates=coordinates_pb2.Coordinates(row=5,col=2),value="Canada")] )), None)
 
 	#print("Added first table")

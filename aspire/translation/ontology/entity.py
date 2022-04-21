@@ -10,7 +10,8 @@ class Entity:
 
 	def toCreateQuery(self):
 		hash = self.getHash()
-		return "CREATE (:"+self.Type+" { uid:"+self.UID+", viewReference:"+self.ViewReference+", hash:"+str(hash)+", value:\""+self.Value+"\", row:\""+str(self.Row)+"\", col:\""+str(self.Col)+"\"})"
+		print ("INSERT INTO "+self.Type+" VALUES ("+self.UID+","+self.ViewReference+",'"+str(hash)+"','"+self.Value+"','"+str(self.Row)+"','"+str(self.Col)+"');")
+		return "CREATE QUERY CreateVertex() FOR GRAPH Duo { INSERT INTO "+self.Type+" VALUES ("+self.UID+","+self.ViewReference+",'"+str(hash)+"','"+self.Value+"','"+str(self.Row)+"','"+str(self.Col)+"');}"
 
 	def getHash(self):
 		return str(hash(self.ViewReference+self.UID+self.Type+self.Value))
